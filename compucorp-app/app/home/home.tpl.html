@@ -1,0 +1,11 @@
+<div>
+    <md-content layout-padding ng-if="home.activated">
+        <div layout="row" layout-align="center center" class="u-loader">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </md-content>
+
+    <div class="t-home" ng-if="!home.activated">
+        <h1>{{home.coords}}</h1>
+    </div>
+</div>
