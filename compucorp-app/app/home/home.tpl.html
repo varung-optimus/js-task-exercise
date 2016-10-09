@@ -1,11 +1,11 @@
 <div class="container">
-    <md-content layout-padding ng-if="home.activated">
+    <md-content layout-padding ng-if="!home.location">
         <div layout="row" layout-align="center center" class="u-loader">
             <md-progress-circular md-mode="indeterminate"></md-progress-circular>
         </div>
     </md-content>
 
-    <div class="t-home" ng-if="!home.activated">
+    <div class="t-home" ng-if="home.location">
         <div class="container">
             <section layout="row" layout-align="center center" layout-xs="column" class="md-padding">
                 <md-input-container class="md-block" flex="80">
@@ -16,12 +16,6 @@
                     <md-button ng-click="home.getForecastByLocation()" class="md-raised">Search</md-button>
                 </div>
             </section>
-            <!--<h3 layout="row" class="md-padding md-warn">
-                Displaying data for: {{home.forecast.city.name}}, {{home.forecast.city.country}}
-            </h3>-->
-
-            <!--<cite class="md-padding md-warn">Lon: {{home.forecast.city.coord.lon}} Lat: {{home.forecast.city.coord.lat}}</cite>-->
-
             <div layout="row">
                 <div flex day-weather="home.forecast" show-entry="home.forecast.list[0]"></div>
             </div>

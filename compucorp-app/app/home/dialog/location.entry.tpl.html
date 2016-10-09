@@ -9,17 +9,17 @@
 
     <md-dialog-content>
       <div class="md-dialog-content" layout="row">
-        <p>
-          Please enter the Location details below
-        </p>
+        <section layout="row" layout-align="center center" layout-xs="column" class="md-padding">
+          <md-input-container class="md-block" flex="80">
+            <label>City / Postal Code</label>
+            <input ng-model="location" type="text" class="form-control" placeholder="City">
+          </md-input-container>
+          <div flex>
+            <md-button ng-click="answer()" class="md-raised">Search</md-button>
+          </div>
+        </section>
       </div>
     </md-dialog-content>
 
-    <md-dialog-actions layout="row">
-      <span flex></span>
-      <md-button class="md-accent" ng-click="answer('useful')">
-        Get Weather Forecast
-      </md-button>
-    </md-dialog-actions>
   </form>
 </md-dialog>

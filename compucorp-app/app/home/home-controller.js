@@ -17,14 +17,14 @@
     var vm = this;
     vm.activated = true;
     vm.iconBaseUrl = 'http://openweathermap.org/img/w/';
-    vm.location = 'Delhi';
+    // vm.location = 'Delhi';
 
     vm.getForecastByLocation = function () {
       vm.forecast = Weather.queryForecastDaily({
         location: vm.location
       });
     };
-    
+
     vm.getForecastByLocation();
 
     /*
@@ -36,6 +36,10 @@
         lat: data.coords.latitude,
         long: data.coords.longitude
       };
+      Weather.queryForecastDaily(vm.coords, function (result) {
+        vm.location = result.city.name;
+        vm.forecast = result;
+      });
     }, function (err) {
       // Location is rejected, display the dialog for entry
       vm.activated = false;
@@ -47,7 +51,8 @@
         fullscreen: true // Only for -xs, -sm breakpoints.
       })
         .then(function (answer) {
-          vm.status = 'You said the information was "' + answer + '".';
+          vm.location = answer;
+          vm.getForecastByLocation();
         }, function () {
           vm.status = 'You cancelled the dialog.';
         });
@@ -65,7 +70,7 @@
     };
 
     $scope.answer = function (answer) {
-      $mdDialog.hide(answer);
+      $mdDialog.hide($scope.location);
     };
   }
 } ());
