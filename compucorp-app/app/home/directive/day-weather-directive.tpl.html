@@ -1,0 +1,29 @@
+<div class="weather panel panel-primary">
+    <md-card>
+        <md-card-title>
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <h5 class="md-flex">{{parseDate(useDayForecast.dt) | date:'fullDate'}}</h5>
+                </div>
+            </md-toolbar>
+
+            <md-list-item class="md-3-line md-long-text md-no-proxy _md" role="listitem">
+                <img class="u-icon" ng-src="{{getIconImageUrl(useDayForecast.weather[0].icon)}}" />
+
+                <div class="md-list-item-text">
+                    <h3>{{useDayForecast.temp.day | number:1}}&#176;C {{useDayForecast.weather[0].main}}</h3>
+                    <p>
+                        {{useDayForecast.weather[0].description}}&nbsp;&#126;&nbsp; High: {{useDayForecast.temp.max}}&#176;C&nbsp;&#126;&nbsp; Low:
+                        {{useDayForecast.temp.min}}&#176;C
+                    </p>
+                    <small>
+                        Day: {{useDayForecast.temp.day}}&#176;C&nbsp;&#126;&nbsp;
+                        Night: {{useDayForecast.temp.night}}&#176;C&nbsp;&#126;&nbsp;
+                        Pressure: {{useDayForecast.pressure}} hPa&nbsp;&#126;&nbsp;
+                        Humidity: {{useDayForecast.humidity}}%
+                    </small>
+                </div>
+            </md-list-item>
+        </md-card-title>
+    </md-card>
+</div>
