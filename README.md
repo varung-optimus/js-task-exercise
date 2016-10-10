@@ -1,6 +1,6 @@
 # weather-app 
 
-### [Demo](weatherapp.varungoel.net)
+### [Demo](http://weatherapp.varungoel.net)
 This contains solution for a sample integration of Angular based code with Weather map API to get map related data
 
 [![Sample Demo screenshot](http://varungoel.net/weather.png)](http://varungoel.net/weather.png)
