@@ -1,0 +1,29 @@
+<div class="container">
+    <md-content layout-padding ng-if="!home.location">
+        <div layout="row" layout-align="center center" class="u-loader">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </md-content>
+
+    <div class="t-home" ng-if="home.location">
+        <div class="container">
+            <section layout="row" layout-align="center center" layout-xs="column" class="md-padding">
+                <md-input-container class="md-block" flex="80">
+                    <label>City / Postal Code</label>
+                    <input ng-model="home.location" type="text" class="form-control" placeholder="City">
+                </md-input-container>
+                <div flex>
+                    <md-button ng-click="home.getForecastByLocation()" class="md-raised">Search</md-button>
+                </div>
+            </section>
+            <div layout="row">
+                <div flex day-weather="home.forecast" show-entry="home.forecast.list[0]"></div>
+            </div>
+            <div layout="row" layout-sm="column">
+                <div flex day-weather="home.forecast" show-entry="home.forecast.list[1]"></div>
+                <div flex day-weather="home.forecast" show-entry="home.forecast.list[2]"></div>
+                <div flex day-weather="home.forecast" show-entry="home.forecast.list[3]"></div>
+            </div>
+        </div>
+    </div>
+</div>

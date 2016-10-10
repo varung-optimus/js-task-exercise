@@ -1,0 +1,25 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools md-accent">
+        <h2>Enter your Location</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="row">
+        <section layout="row" layout-align="center center" layout-xs="column" class="md-padding">
+          <md-input-container class="md-block" flex="80">
+            <label>City / Postal Code</label>
+            <input ng-model="location" type="text" class="form-control" placeholder="City">
+          </md-input-container>
+          <div flex>
+            <md-button ng-click="answer()" class="md-raised">Search</md-button>
+          </div>
+        </section>
+      </div>
+    </md-dialog-content>
+
+  </form>
+</md-dialog>
