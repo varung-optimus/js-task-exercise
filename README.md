@@ -1,5 +1,15 @@
-# js-task-exercise
-This contains solution for JavaScript Task (Route 1)
+# weather-app
+This contains solution for a sample integration of Angular based code with Weather map API to get map related data
+
+[![Sample Demo screenshot](http://varungoel.net/weather.png)](http://varungoel.net/weather.png)
+
+The application:
+- Requests user to allow geolocation data. If allowed, the weather is displayed as per the information received.
+- If user does not allow, a modal is displayed that lets user to manually enter the Location by name or pin code.
+
+[![Modal Screenshot](http://varungoel.net/modal.png)](http://varungoel.net/modal.png)
+
+The application uses Google Material design for styling.
 
 ## Usage
 
@@ -12,3 +22,6 @@ bower install
 - The above steps will install all dependencies
 
 Once completed, run: gulp to start the localhost
+
+## Feedback
+Feel free to contact me at varun@varungoel.net and share feedbacks.
